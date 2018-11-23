@@ -18,5 +18,9 @@ def find_the_cheese(food)
   # the array below is here to help
   cheese_types = ["cheddar", "gouda", "camembert"]
   cheese = food & cheese_types
-  return cheese.join
+  if cheese.length > 0 
+    return cheese.join
+  else 
+    return nil 
+  end
 end
