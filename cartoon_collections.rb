@@ -6,20 +6,21 @@ end
 
 def summon_captain_planet(planeteer_calls)
   planeteer_calls.map do |call|
-    puts call.capitalize << "!"
+    call.capitalize << "!"
   end
 end
 
 def long_planeteer_calls(calls)
-  calls.collect do |call|
-    if call.length > 4
-      return true
-    else 
-      return false
-  end
+  calls.any? {|call| call.length > 4}
 end
 
-def find_the_cheese# code an argument here
+def find_the_cheese(food)
   # the array below is here to help
   cheese_types = ["cheddar", "gouda", "camembert"]
+  cheese = food & cheese_types
+  if cheese.length > 0 
+    return cheese.join
+  else 
+    return nil 
+  end
 end
